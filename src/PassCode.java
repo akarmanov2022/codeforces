@@ -1,11 +1,15 @@
-package PACKAGE_NAME;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-/**
-*
-* @author Arseniy Karmanov 
-*/
 public class PassCode {
-    private static final Logger LOG = LoggerFactory.getLogger(PassCode.class);
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 99999; i++) {
+            String code = String.format("%05d", i);
+            if (code.equals("12345")) {
+                System.out.println("accepted");
+            } else if (code.matches("\\d{5}")) {
+                System.out.println("wrong answer");
+            } else {
+                System.out.println("wrong error");
+            }
+        }
+    }
 }
